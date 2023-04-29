@@ -6,51 +6,51 @@ import { FileLoading } from './FileLoading/FileLoading';
 
 
 function App() {
-  ///////comm
-  // const [passengers, setPassengers] = useState([]);
-  // const style = {
-  //   height: 18,
-  //   border: "1px solid green",
-  //   margin: 6,
-  //   padding: 8
-  // };
+  /////comm
+  const [passengers, setPassengers] = useState([]);
+  const style = {
+    height: 18,
+    border: "1px solid green",
+    margin: 6,
+    padding: 8
+  };
 
-  // let totalRecords = 149;
-  // const  GetDataFromApi =  () => {
+  let totalRecords = 149;
+  const  GetDataFromApi =  () => {
   
-  //   let limit = 10;
-  //   let offset = Math.ceil(passengers.length / limit)+1;
+    let limit = 10;
+    let offset = Math.ceil(passengers.length / limit)+1;
 
 
 
-  //   var apiurl = `https://api.instantwebtools.net/v1/passenger?page=${offset}&size=${limit}`;
+    var apiurl = `https://api.instantwebtools.net/v1/passenger?page=${offset}&size=${limit}`;
 
-  //   axios.get(apiurl)
-  //     .then((res) => {
-  //       const apiresp =  res?.data;
-  //       const mergeData= [...passengers,...apiresp.data];
-  //       setPassengers(mergeData);
-  //     })
-  //     .catch((err) => {
-  //   })
-  // };
+    axios.get(apiurl)
+      .then((res) => {
+        const apiresp =  res?.data;
+        const mergeData= [...passengers,...apiresp.data];
+        setPassengers(mergeData);
+      })
+      .catch((err) => {
+    })
+  };
 
-  // useEffect(()=>{
-  //   GetDataFromApi();
+  useEffect(()=>{
+    GetDataFromApi();
    
-  // },[])
+  },[])
 
-  // const fetchmoreData=()=>{
-  //   if(passengers.length < totalRecords)
-  //   {
-  //     GetDataFromApi();
-  //   }
+  const fetchmoreData=()=>{
+    if(passengers.length < totalRecords)
+    {
+      GetDataFromApi();
+    }
  
-  // }
+  }
 
   return (
     <>
-      {/* <CalendarComponent startingMonth={3} endingMonth={9} />
+      <CalendarComponent startingMonth={3} endingMonth={9} />
       <br></br> <br></br> <br></br> <br></br> 
 
        <div id="scrollableDiv" style={{ height: 300, width: 200, overflow: 'auto',  flexDirection: 'column-reverse', }}>
@@ -70,8 +70,8 @@ function App() {
 
        
 
-      </div>*/}
-       <FileLoading/>
+      </div>
+       {/* <FileLoading/> */}
 
     </>
   );
